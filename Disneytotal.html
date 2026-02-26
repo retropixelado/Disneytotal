@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disneyland Paris App - 7 al 10 Septiembre</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Poppins',sans-serif;background:#f2f6ff}
+header{background:linear-gradient(135deg,#003399,#5dade2);color:#fff;padding:20px;text-align:center;border-bottom-left-radius:25px;border-bottom-right-radius:25px}
+.tabs{display:flex;flex-wrap:wrap;justify-content:space-around;background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 4px 10px rgba(0,0,0,.1)}
+.tab{flex:1 1 33%;text-align:center;padding:12px;font-weight:600;cursor:pointer;font-size:14px}
+.tab.active{background:#ffcc00}
+.content{display:none;padding:15px}
+.content.active{display:block}
+.section-title{font-weight:600;margin:15px 0 10px;color:#003399}
+.card{background:#fff;padding:15px;margin-bottom:12px;border-radius:20px;box-shadow:0 6px 15px rgba(0,0,0,.08);display:flex;align-items:flex-start;gap:10px}
+.card input{transform:scale(1.3);margin-top:4px}
+.time{font-weight:600;color:#003399;font-size:14px;min-width:70px}
+.label{font-size:14px}
+.done{text-decoration:line-through;opacity:.6}
+.reserva{background:#fff3cd;border-left:6px solid #ff9800}
+.progress-container{margin:10px 0 20px}
+.progress-bar-bg{width:100%;height:10px;background:#e0e0e0;border-radius:10px;overflow:hidden}
+.progress-bar-fill{height:10px;width:0%;background:#4caf50;transition:width .3s ease}
+.progress-text{font-size:12px;margin-top:5px;text-align:right;color:#555}
+.note{font-size:12px;color:#666;margin-bottom:10px}
+footer{text-align:center;padding:15px;font-size:13px;color:#555}
+</style>
+</head>
+<body><header>
+<h1>🏰 Disneyland Paris</h1>
+<p>7 - 10 Septiembre · Niño 1,21m · Tarjeta Express</p>
+</header><div class="tabs">
+<div class="tab active" onclick="showTab(0)">Lun 7</div>
+<div class="tab" onclick="showTab(1)">Mar 8</div>
+<div class="tab" onclick="showTab(2)">Mié 9</div>
+<div class="tab" onclick="showTab(3)">Jue 10</div>
+<div class="tab" onclick="showTab(4)">Tiendas</div>
+<div class="tab" onclick="showTab(5)">Espectáculos</div>
+</div><!-- LUNES DISNEYLAND --><div class="content active">
+<div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar-fill"></div></div><div class="progress-text">0% completado</div></div>
+<div class="note">Ruta optimizada por zonas. Altura 1,21m → Puede montar en todas excepto Indiana Jones (1,40m).</div><div class="section-title">11:00 – Main Street & Castillo</div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">11:00</div><div class="label">Paseo Main Street</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">11:30</div><div class="label">Castillo + Dragón</div></div><div class="section-title">12:00 – Fantasyland</div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">12:00</div><div class="label">Peter Pan</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">12:30</div><div class="label">Buzz Lightyear</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">13:00</div><div class="label">Laberinto de Alicia</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">13:30</div><div class="label">It's a Small World</div></div><div class="section-title">14:30 – Almuerzo</div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">14:30</div><div class="label">Casey’s Corner o Plaza Gardens</div></div><div class="section-title">15:30 – Adventureland</div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">15:30</div><div class="label">Pirates of the Caribbean</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">16:00</div><div class="label">Agrabah – Pasaje de Aladdin</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">16:30</div><div class="label">Isla Pirata</div></div><div class="section-title">17:30 – Desfile</div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">17:30</div><div class="label">Disney Stars on Parade</div></div><div class="section-title">19:30 – Cena</div>
+<div class="card reserva"><input type="checkbox" onchange="updateProgress(this)"><div class="time">19:30</div><div class="label">Hotel New York – The Art of Marvel</div></div><div class="section-title">21:30 – Fuegos</div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">21:30</div><div class="label">Show nocturno Castillo</div></div>
+</div><!-- MARTES STUDIOS --><div class="content">
+<div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar-fill"></div></div><div class="progress-text">0% completado</div></div>
+<div class="note">Día completo Studios con Avengers + Pixar + Frozen.</div><div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">09:30</div><div class="label">Spider‑Man W.E.B.</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">10:00</div><div class="label">Avengers Flight Force (1,20m)</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">11:00</div><div class="label">Ratatouille</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">12:00</div><div class="label">Frozen Land (nueva zona)</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">13:30</div><div class="label">Almuerzo rápido Studios</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">15:00</div><div class="label">Mickey and the Magician</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">16:30</div><div class="label">Tower of Terror</div></div>
+</div><!-- MIERCOLES DISNEYLAND --><div class="content">
+<div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar-fill"></div></div><div class="progress-text">0% completado</div></div><div class="card reserva"><input type="checkbox" onchange="updateProgress(this)"><div class="time">13:30</div><div class="label">Captain Jack's (Reserva)</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">09:30</div><div class="label">Big Thunder Mountain</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">10:30</div><div class="label">Phantom Manor</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">15:00</div><div class="label">Repetir favoritas con Express</div></div>
+</div><!-- JUEVES STUDIOS --><div class="content">
+<div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar-fill"></div></div><div class="progress-text">0% completado</div></div><div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">09:30</div><div class="label">Zona Frozen detallada</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">11:00</div><div class="label">Pixar Musical Adventure</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">13:00</div><div class="label">Compras finales Studios</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="time">15:30</div><div class="label">Despedida del parque</div></div>
+</div><!-- TIENDAS --><div class="content">
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">Emporium (Main Street)</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">Disney & Co (Main Street)</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">Mission Equipment (Avengers Campus)</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">World of Disney (Village)</div></div>
+</div><!-- ESPECTACULOS --><div class="content">
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">Disney Stars on Parade – 17:30 (Disneyland)</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">Show Nocturno Castillo – 21:30 (Disneyland)</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">Mickey and the Magician – Studios</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">Pixar Musical Adventure – Studios</div></div>
+<div class="card"><input type="checkbox" onchange="updateProgress(this)"><div class="label">Frozen Musical Invitation – Studios</div></div>
+</div><footer>Plan optimizado por zonas · Altura 1,21m validada · Express integrada</footer><script>
+function showTab(i){const t=document.querySelectorAll('.tab');const c=document.querySelectorAll('.content');t.forEach(e=>e.classList.remove('active'));c.forEach(e=>e.classList.remove('active'));t[i].classList.add('active');c[i].classList.add('active')}
+function updateProgress(cb){const content=cb.closest('.content');const boxes=content.querySelectorAll('input[type="checkbox"]');const checked=content.querySelectorAll('input[type="checkbox"]:checked');const percent=Math.round((checked.length/boxes.length)*100);const bar=content.querySelector('.progress-bar-fill');const text=content.querySelector('.progress-text');if(bar){bar.style.width=percent+"%"}if(text){text.textContent=percent+"% completado"}cb.closest('.card').querySelector('.label')?.classList.toggle('done')}
+</script></body>
+</html>
